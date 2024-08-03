@@ -59,9 +59,9 @@ def rec():
         query = request.form.get('query')
         recommendations = getRecommendations(query)
         recommendations_html = recommendations.to_html(classes='table table-bordered')
-        return render_template('html.html', query=query, recommendations=recommendations_html, book_list=book_list)
+        return render_template('index.html', query=query, recommendations=recommendations_html, book_list=book_list)
     else:
-        return render_template('html.html', query="", recommendations="<<unknown>>", book_list=book_list)
+        return render_template('index.html', query="", recommendations="<<unknown>>", book_list=book_list)
 
 
 if __name__ == "__main__":
